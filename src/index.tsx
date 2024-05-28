@@ -24,6 +24,7 @@ const withSwRegistration = (WrappedComp: FC<WrappedCompProps>, ) => {
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.ready.then((registration) => {
           if (registration.waiting) {
+            setAppUpdatePending(true);
             // send the skip message to kick off the service worker install.
             registration.waiting.postMessage({type: 'SKIP_WAITING'});
             // add an listener to reload page when the new service worker is ready.
