@@ -31,6 +31,7 @@ const withSwRegistration = (WrappedComp: FC<WrappedCompProps>, ) => {
             registration.waiting.addEventListener('statechange', (event: Event) => {
               const { state = '' } =  event.target as unknown as {state: string} || {};
               if (state === 'activated') {
+                setAppUpdatePending(false);
                 window.location.reload();
               }
             });
