@@ -32,7 +32,7 @@ export default function App(props: AppProps) {
         }
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          This is a PWA!
+          This is a PWA Version test app!
         </p>
       </header>
       <div>
