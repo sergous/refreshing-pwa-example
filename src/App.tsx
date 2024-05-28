@@ -38,7 +38,7 @@ export default function App(props: AppProps) {
       </div>
       <footer>
         <p>
-          Version: { process.env.REACT_APP_VERSION_ID || 'development' }
+          Version: { process.env.VERCEL_DEPLOYMENT_ID || process.env.REACT_APP_VERSION_ID || 'development' }
         </p>
       </footer>
     </div>

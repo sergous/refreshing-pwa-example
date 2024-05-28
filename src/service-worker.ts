@@ -17,7 +17,7 @@ import { StaleWhileRevalidate } from 'workbox-strategies';
 declare const self: ServiceWorkerGlobalScope;
 
 
-const appVersion = process.env.REACT_APP_VERSION_ID || 'development';
+const appVersion = process.env.VERCEL_DEPLOYMENT_ID || process.env.REACT_APP_VERSION_ID || 'development';
 console.log('app version', appVersion);
 clientsClaim();
 
