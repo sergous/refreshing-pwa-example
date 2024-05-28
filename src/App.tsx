@@ -20,7 +20,8 @@ export default function App(props: AppProps) {
     const REQUEST_ID = process.env.REACT_APP_VERCEL_GIT_PULL_REQUEST_ID
     const BRANCH_NAME = process.env.REACT_APP_VERCEL_GIT_COMMIT_REF
     const COMMIT_MESSAGE = process.env.REACT_APP_VERCEL_GIT_COMMIT_MESSAGE
-    return (REQUEST_ID ? `#${REQUEST_ID}-${BRANCH_NAME}` : COMMIT_MESSAGE) || process.env.REACT_APP_VERSION_ID || 'development' 
+    const AUTHOR_NAME = process.env.REACT_APP_VERCEL_GIT_COMMIT_AUTHOR_NAME
+    return (REQUEST_ID ? `#${REQUEST_ID}-${BRANCH_NAME}` : `${AUTHOR_NAME}: ${COMMIT_MESSAGE}`) || process.env.REACT_APP_VERSION_ID || 'development' 
   }
 
   return (
